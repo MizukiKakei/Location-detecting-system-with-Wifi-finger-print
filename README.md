@@ -21,8 +21,3 @@ Two data sets of Training data and Validation data were provided. Training data 
 ### Methods of Analysis
 6 ways of analysis were conducted. 
 There were 2 different preprocesses (PCAs and No PCAs). For the classification of floor and building and the regression of longitude and latitude, 3 prediction models (KNN, SVM and Random forest) were applied. 
-
-### Attached file description
-
-
-
