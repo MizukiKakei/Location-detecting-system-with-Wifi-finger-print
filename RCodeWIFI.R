@@ -20,7 +20,7 @@ library(caret)                                                                  
 library(dplyr)                                                                       # Data manipulation
 library(ggplot2)                                                                     # Plotting
 library(plotly)                                                                      # Plotting
-
+library(learningr)                                                                   # Checking hypotenuse
 
 ## Train data ####
 # Calling Train data ####
@@ -166,7 +166,7 @@ postResample(rfPredictionModelLONGI, testing$LONGITUDE)
 # Prediction for longitude with Valifation data
 rfPredictionLONGI <- predict(rfmodelLONGI, TEST_PCs_206)
 
-# Checking the accuracy of the model with validation set
+# Checking the R-Square of the model with validation set
 postResample(rfPredictionLONGI, WifiTestNoNA529col$LONGITUDE)
 
 
@@ -298,7 +298,7 @@ postResample(rfPredictionModelLat, testing$LATITUDE)
 # Prediction for Latitude with validation set
 rfPredictionLat <- predict(rfmodelLat, WifiTestNoNA529col)
 
-# Checking the accuracy with validation set
+# Checking the R-squre with validation set
 postResample(rfPredictionLat, WifiTestNoNA529col$LATITUDE)
 
 # Creating data frame with prediction
@@ -344,9 +344,6 @@ errorDistance <- sqrt((PredictionDataFBLL$LATITUDE - ValidationDataFBLL$LATITUDE
                       (PredictionDataFBLL$LONGITUDE - ValidationDataFBLL$LONGITUDE)^2)
 mean(errorDistance)
 
-library(learningr)
 Hypotenuse <- hypotenuse(PredictionDataFBLL$LATITUDE - ValidationDataFBLL$LATITUDE,PredictionDataFBLL$LONGITUDE - ValidationDataFBLL$LONGITUDE)
 mean(Hypotenuse)
-
-# confusion Matrix
 
